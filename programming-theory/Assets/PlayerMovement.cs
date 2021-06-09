@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
+    
     private float _movementSpeed;
 
     private NavMeshAgent _navMeshAgent;
