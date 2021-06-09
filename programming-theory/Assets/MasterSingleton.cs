@@ -6,6 +6,9 @@ public class MasterSingleton : MonoBehaviour
 {
     public static MasterSingleton instance { get; private set; }
 
+    public SceneLoader SceneLoader { get { return _sceneLoader; } }
+
+    private SceneLoader _sceneLoader;
     private void Awake()
     {
         if(instance == null)
@@ -17,6 +20,8 @@ public class MasterSingleton : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        _sceneLoader = GetComponentInChildren<SceneLoader>();
     }
 
     
