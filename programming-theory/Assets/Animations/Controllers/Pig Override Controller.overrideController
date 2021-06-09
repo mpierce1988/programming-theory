@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pig Override Controller
+  m_Controller: {fileID: 9100000, guid: 035014295aba141428df9914a6e76bf2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 112fd01a504002049a86a3147015e5ae, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 47040e9be5089844ba574a243625b41f, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: a82c9f77ef4370340a9fae2125ee9b1f, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a3b756ae31931794fadb3a8a02683358, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: cab7a5414d10c0f4b801d170b81dfb7c, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 2fce37f628ad00f4aa1975748eebe591, type: 3}
