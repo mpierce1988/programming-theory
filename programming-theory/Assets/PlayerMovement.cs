@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Debug.Log("InputDirection: " + inputDirection);
+
 
         Vector2 desiredMovement = inputDirection * (_movementSpeed * Time.deltaTime);
         Vector3 desiredMovementVector3 = new Vector3(desiredMovement.x, 0f, desiredMovement.y);

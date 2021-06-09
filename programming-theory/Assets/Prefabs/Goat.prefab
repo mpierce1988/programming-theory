@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4962165651933217252}
   - component: {fileID: 4962165651933217253}
   - component: {fileID: 4962165651933217250}
+  - component: {fileID: 8437195007377871647}
+  - component: {fileID: 4969128827907741372}
   m_Layer: 0
   m_Name: Goat
   m_TagString: Untagged
@@ -69,6 +71,33 @@ CapsuleCollider:
   m_Height: 9
   m_Direction: 1
   m_Center: {x: 0, y: 5, z: 1.43}
+--- !u!114 &8437195007377871647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962165651933217251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61bdaf68fa8eb044bbdc0158dc150ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wanderRange: 25
+  _aiTickTime: 3
+--- !u!114 &4969128827907741372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962165651933217251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fb034fcc0712040861ef902aa49ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5012129809981379326}
 --- !u!1001 &4962165653090229558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,5 +174,10 @@ PrefabInstance:
 --- !u!4 &4959380653949066724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4051920020979922, guid: feec0bb87b2350742a84cf58423fc0bb, type: 3}
+  m_PrefabInstance: {fileID: 4962165653090229558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5012129809981379326 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95577106892738504, guid: feec0bb87b2350742a84cf58423fc0bb, type: 3}
   m_PrefabInstance: {fileID: 4962165653090229558}
   m_PrefabAsset: {fileID: 0}

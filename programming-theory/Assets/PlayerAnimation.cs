@@ -28,7 +28,7 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         float relativeSpeed = _navMeshAgent.velocity.magnitude / _navMeshAgent.speed;
-        Debug.Log("RelativeSpeed: " + relativeSpeed);
+
         _animator.SetFloat(_speedString, relativeSpeed);
     }
 }
