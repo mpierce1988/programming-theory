@@ -7,10 +7,10 @@ using System;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField]
-    private const string _menuName = "menu";
+    private string _menuName = "menu";
 
     [SerializeField]
-    private const string _gameplayName = "gameplay";
+    private string _gameplayName = "gameplay";
 
     public event Action OnMenuLoaded = delegate { };
     public event Action OnGameplayLoaded = delegate { };
