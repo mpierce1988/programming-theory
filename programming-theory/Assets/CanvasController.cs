@@ -11,9 +11,22 @@ public class CanvasController : MonoBehaviour
     private GameObject _gameplayPanel;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        MasterSingleton.instance.SceneLoader.OnMenuLoaded += EnableMenuPanel;
+        MasterSingleton.instance.SceneLoader.OnMenuLoaded += DisableGameplayPanel;
+
+        MasterSingleton.instance.SceneLoader.OnGameplayLoaded += EnableGameplayPanel;
+        MasterSingleton.instance.SceneLoader.OnGameplayLoaded += DisableMenuPanel;
+    }
+
+    private void OnDestroy()
+    {
+        MasterSingleton.instance.SceneLoader.OnMenuLoaded -= EnableMenuPanel;
+        MasterSingleton.instance.SceneLoader.OnMenuLoaded -= DisableGameplayPanel;
+
+        MasterSingleton.instance.SceneLoader.OnGameplayLoaded -= EnableGameplayPanel;
+        MasterSingleton.instance.SceneLoader.OnGameplayLoaded -= DisableMenuPanel;
     }
 
     void DisableMenuPanel()
