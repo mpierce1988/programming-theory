@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         _animalCount = _animalsToSpawn.Count;
         SpawnAnimals();
+        MasterSingleton.instance.CanvasController.UpdateScore(0);
     }
 
     private void SpawnAnimals()
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         _score++;
 
         // update score text
+        MasterSingleton.instance.CanvasController.UpdateScore(_score);
     }
 
     void EndGame()

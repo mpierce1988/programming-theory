@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CanvasController : MonoBehaviour
@@ -10,9 +11,14 @@ public class CanvasController : MonoBehaviour
     [SerializeField]
     private GameObject _gameplayPanel;
 
+    [SerializeField]
+    private TextMeshProUGUI _scoreText;
+
     // Start is called before the first frame update
     private void Start()
     {
+        
+
         MasterSingleton.instance.SceneLoader.OnMenuLoaded += EnableMenuPanel;
         MasterSingleton.instance.SceneLoader.OnMenuLoaded += DisableGameplayPanel;
 
@@ -47,5 +53,10 @@ public class CanvasController : MonoBehaviour
     void EnableGameplayPanel()
     {
         _gameplayPanel.SetActive(true);
+    }
+
+    public void UpdateScore(int score)
+    {
+        _scoreText.text = "Score: " + score;
     }
 }
