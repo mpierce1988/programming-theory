@@ -62,6 +62,6 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        // activate end game panel
+        MasterSingleton.instance.CanvasController.EnableGameOverPanel();
     }
 }
