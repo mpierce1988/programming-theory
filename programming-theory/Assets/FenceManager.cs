@@ -18,8 +18,7 @@ public class FenceManager : MonoBehaviour
         int index = UnityEngine.Random.Range(0, _spawnPoints.Count);
         Transform randomTransform = _spawnPoints[index];
         animal.gameObject.transform.position = randomTransform.position;
-        animal.gameObject.transform.rotation = randomTransform.rotation;
-        animal.DisableAI();
+        animal.gameObject.transform.rotation = randomTransform.rotation;        
 
         _spawnPoints.RemoveAt(index);
 

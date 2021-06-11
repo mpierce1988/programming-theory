@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuPanel: {fileID: 6723164752156800042}
   _gameplayPanel: {fileID: 3737112519155162825}
-  _gameOverPanel: {fileID: 0}
+  _gameOverPanel: {fileID: 430419596876976575}
   _scoreText: {fileID: 1839969383358054198}
 --- !u!1 &6723164752156800042
 GameObject:

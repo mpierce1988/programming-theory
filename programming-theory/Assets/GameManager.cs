@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
         // spawn each animal in list at a random spawn point, and register callback for OnGrabbed
         foreach (GameObject animal in _animalsToSpawn)
         {  
-            Instantiate(animal, RandomSpawnPoint().position, Quaternion.identity);
-            animal.GetComponent<Animal>().OnGrabbed += AnimalGrabbed;
+            GameObject spawnedAnimal = Instantiate(animal, RandomSpawnPoint().position, Quaternion.identity);
+            spawnedAnimal.GetComponent<Animal>().OnGrabbed += AnimalGrabbed;
         }
     }
 
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     void AnimalGrabbed()
     {
+        Debug.Log("GameManager registers AnimalGrabbed.");
         _animalCount--;
 
         UpdateScore();
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         // increment score
         _score++;
-
+        Debug.Log("Score: " + _score);
         // update score text
         MasterSingleton.instance.CanvasController.UpdateScore(_score);
     }

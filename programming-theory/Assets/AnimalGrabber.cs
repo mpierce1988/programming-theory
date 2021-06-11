@@ -13,19 +13,12 @@ public class AnimalGrabber : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AnimalGrabber trigger.");
+
         if (other.GetComponent<Animal>())
         {
-            _fenceManager.PlaceAnimal(other.GetComponent<Animal>());
+            Animal caughtAnimal = other.GetComponent<Animal>();
+            caughtAnimal.CaptureAnimal();
+            _fenceManager.PlaceAnimal(caughtAnimal);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("AnimalGrabber trigger.");
-        if (collision.gameObject.GetComponent<Animal>())
-        {
-            _fenceManager.PlaceAnimal(collision.gameObject.GetComponent<Animal>());
-        }
-    }
+    }    
 }
