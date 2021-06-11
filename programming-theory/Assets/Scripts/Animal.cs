@@ -13,6 +13,7 @@ public class Animal : MonoBehaviour
     protected float _aiTickTime = 3f;
 
     public event Action OnEat = delegate { };
+    public event Action OnGrabbed = delegate { };
     public event Action OnAIDisabled = delegate { };
     
 
