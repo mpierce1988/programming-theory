@@ -90,7 +90,7 @@ public class Animal : MonoBehaviour
         OnAIDisabled.Invoke();
     }
 
-    public void CaptureAnimal()
+    public virtual void CaptureAnimal()
     {
         OnGrabbed.Invoke();
         Debug.Log("Invoking OnGrabbed event on " + this.gameObject.name);
