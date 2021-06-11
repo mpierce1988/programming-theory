@@ -8,7 +8,9 @@ public class MasterSingleton : MonoBehaviour
 
     public SceneLoader SceneLoader { get { return _sceneLoader; } }
     public CanvasController CanvasController { get { return _canvasController; } }
+    public SoundEffects SoundEffects { get { return _soundEffects; } }
 
+    private SoundEffects _soundEffects;
     private SceneLoader _sceneLoader;
     private CanvasController _canvasController;
     private void Awake()
@@ -26,6 +28,7 @@ public class MasterSingleton : MonoBehaviour
 
         _sceneLoader = GetComponentInChildren<SceneLoader>();
         _canvasController = GetComponentInChildren<CanvasController>();
+        _soundEffects = GetComponentInChildren<SoundEffects>();
     }
 
     
