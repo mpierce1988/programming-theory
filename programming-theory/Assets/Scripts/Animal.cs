@@ -13,6 +13,8 @@ public class Animal : MonoBehaviour
     protected float _aiTickTime = 3f;
 
     public event Action OnEat = delegate { };
+    public event Action OnAIDisabled = delegate { };
+    
 
     protected int _layerMask = -1;
 
@@ -59,7 +61,7 @@ public class Animal : MonoBehaviour
         {
             // play eat animation
             OnEat.Invoke();
-            Debug.Log("Animal is Eating");
+
             
         }
         else
@@ -78,6 +80,12 @@ public class Animal : MonoBehaviour
 
             yield return new WaitForSeconds(_aiTickTime);
         }
+    }
+
+    public void DisableAI()
+    {
+        _aiActive = false;
+        OnAIDisabled.Invoke();
     }
 
 }
