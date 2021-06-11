@@ -85,6 +85,7 @@ public class Animal : MonoBehaviour
     public void DisableAI()
     {
         _aiActive = false;
+        _navMeshAgent.enabled = false;
         OnAIDisabled.Invoke();
     }
 
