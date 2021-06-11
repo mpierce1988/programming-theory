@@ -1977,6 +1977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146b6b539697439419d9cf055d2a9f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pigSound: {fileID: 8300000, guid: 4629e1b8b57b8ea4a8e83a1945ea89e6, type: 3}
+  _cattleSound: {fileID: 8300000, guid: 6da3c6a916b7a184697ef0c24c7fb3c2, type: 3}
+  _goatSound: {fileID: 8300000, guid: 37a2d0baaa765244da188534400f2d63, type: 3}
 --- !u!82 &3947012620752003943
 AudioSource:
   m_ObjectHideFlags: 0
