@@ -26,14 +26,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        MovePlayer();
+    }
 
+    // ABSTRACTION
 
+    private void MovePlayer()
+    {        
+        _navMeshAgent.SetDestination(GetNextPosition());
+    }
+
+    // ABSTRACTION
+    Vector3 GetNextPosition()
+    {
+        Vector2 inputVector = GetInputDirection();
+        Vector3 movementVector = MovementVector(inputVector);
+
+        return transform.position + movementVector;
+    }
+    // ABSTRACTION
+    Vector2 GetInputDirection()
+    {
+        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); 
+    }
+    // ABSTRACTION
+    Vector3 MovementVector(Vector2 inputDirection)
+    {
         Vector2 desiredMovement = inputDirection * (_movementSpeed * Time.deltaTime);
-        Vector3 desiredMovementVector3 = new Vector3(desiredMovement.x, 0f, desiredMovement.y);
-
-        //_navMeshAgent.Move(desiredMovementVector3);
-        Vector3 desiredPosition = transform.position + desiredMovementVector3;
-        _navMeshAgent.SetDestination(desiredPosition);
+        return new Vector3(desiredMovement.x, 0f, desiredMovement.y);
     }
 }

@@ -26,10 +26,13 @@ public class GameManager : MonoBehaviour
         foreach (GameObject animal in _animalsToSpawn)
         {  
             GameObject spawnedAnimal = Instantiate(animal, RandomSpawnPoint().position, Quaternion.identity);
+
+            // POLYMORPHISM
             spawnedAnimal.GetComponent<Animal>().OnGrabbed += AnimalGrabbed;
         }
     }
 
+    // ABSTRACTION
     Transform RandomSpawnPoint()
     {
         int spawnIndex = UnityEngine.Random.Range(0, _spawnPoints.Count);
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
             EndGame();
         }
     }
-
+    // ABSTRACTION
     void UpdateScore()
     {
         // increment score
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
         // update score text
         MasterSingleton.instance.CanvasController.UpdateScore(_score);
     }
-
+    // ABSTRACTION
     void EndGame()
     {
         MasterSingleton.instance.CanvasController.EnableGameOverPanel();

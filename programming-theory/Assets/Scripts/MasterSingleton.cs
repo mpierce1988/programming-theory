@@ -5,9 +5,11 @@ using UnityEngine;
 public class MasterSingleton : MonoBehaviour
 {
     public static MasterSingleton instance { get; private set; }
-
+    // ENCAPSULATION
     public SceneLoader SceneLoader { get { return _sceneLoader; } }
+    // ENCAPSULATION
     public CanvasController CanvasController { get { return _canvasController; } }
+    // ENCAPSULATION
     public SoundEffects SoundEffects { get { return _soundEffects; } }
 
     private SoundEffects _soundEffects;

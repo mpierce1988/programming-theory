@@ -5,12 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEffects : MonoBehaviour
 {
+    // ENCAPSULATION
     [SerializeField]
     private AudioClip _pigSound;
 
+    // ENCAPSULATION
     [SerializeField]
     private AudioClip _cattleSound;
 
+    // ENCAPSULATION
     [SerializeField]
     private AudioClip _goatSound;
 
@@ -20,6 +23,13 @@ public class SoundEffects : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        ConfigureAudioSource();
+    }
+
+    // ABSTRACTION
+
+    private void ConfigureAudioSource()
+    {
         _audioSource.loop = false;
         _audioSource.playOnAwake = false;
     }
@@ -38,6 +48,8 @@ public class SoundEffects : MonoBehaviour
     {
         PlaySound(_pigSound);
     }
+
+    // ABSTRACTION
 
     void PlaySound(AudioClip clip)
     {

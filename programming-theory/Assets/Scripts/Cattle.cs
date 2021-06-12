@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cattle : Animal
 {
+    // INHERITANCE
     public override void CaptureAnimal()
     {
         base.CaptureAnimal();

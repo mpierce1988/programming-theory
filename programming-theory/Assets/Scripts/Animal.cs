@@ -32,24 +32,43 @@ public class Animal : MonoBehaviour
         StartCoroutine(AITick());
     }
 
+    #region Movement
+    // ABSTRACTION
+    private void MoveToRandomPosition()
+    {
+        MoveToPosition(GetRandomNavMeshPosition(this.transform.position, _wanderRange, _layerMask));
+    }
+    // ABSTRACTION
     protected void MoveToPosition(Vector3 position)
     {
         _navMeshAgent.SetDestination(position);
     }
 
-    protected Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
+    protected Vector3 GetRandomNavMeshPosition(Vector3 origin, float distance, int layermask)
+    {        
+        Vector3 randomDirection = RandomDirectionFromOrigin(origin, distance); 
+        return ClosestNavHitToPoint(randomDirection, distance, layermask);
+    }
+
+    Vector3 ClosestNavHitToPoint(Vector3 randomDirection, float distance, LayerMask layerMask)
     {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
-
-        randomDirection += origin;
-
         NavMeshHit navHit;
 
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
+        NavMesh.SamplePosition(randomDirection, out navHit, distance, layerMask);
 
         return navHit.position;
     }
 
+    Vector3 RandomDirectionFromOrigin(Vector3 origin, float distance)
+    {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
+
+        return randomDirection += origin;
+    }
+
+    #endregion
+
+    #region AI
     protected bool WantsToEat()
     {
         bool result = UnityEngine.Random.Range(0f, 1f) > 0.5f ? true : false;
@@ -62,16 +81,12 @@ public class Animal : MonoBehaviour
         {
             // play eat animation
             OnEat.Invoke();
-
-            
         }
         else
         {
-            MoveToPosition(RandomNavSphere(this.transform.position, _wanderRange, _layerMask));
-
-            // wait
+            MoveToRandomPosition();
         }
-    }
+    }    
 
     protected IEnumerator AITick()
     {
@@ -96,5 +111,5 @@ public class Animal : MonoBehaviour
         Debug.Log("Invoking OnGrabbed event on " + this.gameObject.name);
         DisableAI();
     }
-
+    #endregion
 }

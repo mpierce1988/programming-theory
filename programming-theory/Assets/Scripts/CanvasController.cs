@@ -75,4 +75,6 @@ public class CanvasController : MonoBehaviour
     {
         _scoreText.text = "Score: " + score;
     }
+
+ 
 }
